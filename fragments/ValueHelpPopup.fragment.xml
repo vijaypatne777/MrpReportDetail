@@ -1,0 +1,100 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<SelectDialog confirm="onConfirm" contentWidth="800px" rememberSelections="true" multiSelect="true">-->
+	<!--</SelectDialog>-->
+	<Dialog title="Material List" >
+		<!--<SearchField liveChange=".onSearch" width="90%" class="sapUiSmallMargin" />-->
+		<SearchField
+			id="searchField"
+			width="100%"
+			placeholder="Search for..."
+			enableSuggestions="true"
+			search=".onSearch"
+			suggest=".onSuggest"
+			suggestionItems="{
+				path: 'botModelSugg>/items',
+				sorter: { path: 'botModelSugg>Material' }
+			}"
+			>
+			<SuggestionItem text="{botModelSugg>Material}" description="{path:'botModelSugg>MaterialName'}" key="{botModelSugg>Material}" />
+		</SearchField>
+		<Table width="850px" id="botTabDialog" class="sapUiSizeCompact"  growing="true" growingScrollToLoad="true"
+    growingThreshold="50"
+		items="{botTabModel3>/items}" visible="false" mode="MultiSelect" >
+			<columns>
+				<Column demandPopin="true" hAlign="Left" width="10%">
+					<header>
+						<Label design="Bold" text="Material"/>
+					</header>
+				</Column>
+				<Column demandPopin="true" hAlign="Left" width="10%">
+					<header>
+						<Label design="Bold" text="MRP Material Name"/>
+					</header>
+				</Column>
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="MRP Area"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="Date Run"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="Iterations"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="Execution Time"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="Manual Time"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+				<!--<Column demandPopin="true" hAlign="Left" width="10%">-->
+				<!--	<header>-->
+				<!--		<Label design="Bold" text="Saved Time"/>-->
+				<!--	</header>-->
+				<!--</Column>-->
+			</columns>
+			<items>
+				<ColumnListItem id="favTableItemTemplate3" type="Active">
+					<cells>
+						<Text text="{botTabModel3>Material}"/>
+					</cells>
+					<!--<cells>-->
+						<!--<Text text="{botTabModel3>BotsName}"/>-->
+					<!--<Link id="aBotsName" text="{botTabModel3>BotsName}" press="handleAssetLink"/>-->
+					<!--</cells>-->
+					<cells>
+						<Text text="{botTabModel3>MaterialName}"/>
+					</cells>
+					<!--<cells>-->
+					<!--	<Text text="{botTabModel3>MRPArea}"/>-->
+					<!--</cells>-->
+					<!--<cells>-->
+					<!--	<Text text="{botTabModel3>Iteration}"/>-->
+					<!--</cells>-->
+					<!--<cells>-->
+					<!--	<Text text="{botTabModel3>BotExetime}"/>-->
+					<!--</cells>-->
+					<!--<cells>-->
+					<!--	<Text text="{botTabModel3>ManualTime}"/>-->
+					<!--</cells>-->
+					<!--<cells>-->
+					<!--	<Text text="{botTabModel3>SavedTime}"/>-->
+					<!--</cells>-->
+				</ColumnListItem>
+			</items>
+		</Table>
+		<buttons>
+			<Button text="Cancel" press="onCancel" type="Emphasized"/>
+			<Button text="Confirm" press="onConfirm" type="Emphasized"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
