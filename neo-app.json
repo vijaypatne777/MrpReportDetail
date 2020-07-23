@@ -1,0 +1,62 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.71.19"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.71.19"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.71.19"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.71.19"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/S4HC",
+      "target": {
+        "type": "destination",
+        "name": "S4HC"
+      },
+      "description": "S4HC"
+    },
+    {
+      "path": "/OPENSAP",
+      "target": {
+        "type": "destination",
+        "name": "OPENSAP"
+      },
+      "description": "S4HC"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}
