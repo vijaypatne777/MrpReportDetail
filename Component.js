@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","YY1_MAT_CONSUME_UI5/Material_Consume_13/model/models"],function(e,t,i){"use strict";return e.extend("YY1_MAT_CONSUME_UI5.Material_Consume_13.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize();this.setModel(i.createDeviceModel(),"device")}})});
